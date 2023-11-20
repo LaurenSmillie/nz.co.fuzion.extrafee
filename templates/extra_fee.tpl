@@ -84,8 +84,12 @@ CRM.$(function($) {
       addExtraFee = false;
     }
 
+    $('#extra_fee_checkbox').hide();
+
+    const radioOptions = $('input[name="payment_processor_id"]');
+
     var pp = $('input[name=payment_processor_id]:checked').val();
-    if (typeof pp === 'undefined') {
+    if (typeof pp === 'undefined' && radioOptions.length==1) {
       pp = $('input[name=payment_processor_id]').val();
     }
     if (typeof pp !== 'undefined' && pp != 0 && totalFee) {
@@ -104,8 +108,10 @@ CRM.$(function($) {
         processingFee = parseFloat(processingFee) || 0;
         totalFee += (parseFloat(totalFee) * parseFloat(percent) / 100 + processingFee);
       }
+      $('#extra_fee_checkbox').show();
     }
     $('#extra_fee_msg').hide();
+    
 
     if (totalFee > totalWithoutTax) {
       var newhtml = message.replace(/{total_amount}/g, roundNumber(totalFee));
