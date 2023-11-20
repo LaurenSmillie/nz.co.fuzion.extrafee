@@ -20,6 +20,8 @@ CRM.$(function($) {
     {/if}
   {literal}
   msg = '<div class="content" id="extra_fee_msg">'+ message.replace(/{total_amount}/g, "0") +'</div><br />';
+  const radioOptions = $('input[name="payment_processor_id"]');
+  
   if (payNowPayment) {
     if (isQuickConfig) {
       $('#total_amount').closest('div').append(optional_input + msg);
@@ -29,7 +31,14 @@ CRM.$(function($) {
     }
   }
   else if (isQuickConfig) {
-    $('#priceset').append(optional_input + msg);
+    if(radioOptions.length>1)
+    {
+      $('.payment_processor-section').append(optional_input + msg);
+    }
+    else
+    {
+      $('#priceset').append(optional_input + msg);
+    }
   }
   else {
     $('#pricesetTotal').append(optional_input + msg);
@@ -85,8 +94,6 @@ CRM.$(function($) {
     }
 
     $('#extra_fee_checkbox').hide();
-
-    const radioOptions = $('input[name="payment_processor_id"]');
 
     var pp = $('input[name=payment_processor_id]:checked').val();
     if (typeof pp === 'undefined' && radioOptions.length==1) {
