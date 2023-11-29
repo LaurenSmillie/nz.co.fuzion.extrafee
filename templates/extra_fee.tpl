@@ -25,19 +25,23 @@ CRM.$(function($) {
   if (payNowPayment) {
     if (isQuickConfig) {
       $('#total_amount').closest('div').append(optional_input + msg);
+      console.log(2);
     }
     else {
       $('.total_amount-section').append(optional_input + msg);
+      console.log(3);
     }
   }
   else if (isQuickConfig) {
     if(radioOptions.length>1)
     {
       $('.payment_processor-section').append(optional_input + msg);
+      console.log(5);
     }
     else
     {
       $('#priceset').append(optional_input + msg);
+      console.log(6);
     }
   }
   else {
