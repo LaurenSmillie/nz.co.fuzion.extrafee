@@ -46,6 +46,7 @@ CRM.$(function($) {
   }
   else {
     $('#pricesetTotal').append(optional_input + msg);
+    console.(7);
   }
 
   $('input#extra_fee_add').on('change', function() { displayTotalAmount(calculateTotalFee()); });
