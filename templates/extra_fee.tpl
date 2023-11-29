@@ -106,7 +106,7 @@ CRM.$(function($) {
           processingFee = processor_extrafee[pp]['processing_fee'];
           message = processor_extrafee[pp]['message'];
         }
-        else if (typeof extra_fee_settings !== 'undefined') {
+        else if (typeof extra_fee_settings !== 'undefined' && extra_fee_settings.paymentprocessors.includes(pp)) {
           percent = extra_fee_settings['percent'];
           processingFee = extra_fee_settings['processing_fee'];
           message = extra_fee_settings['message'];
@@ -115,8 +115,7 @@ CRM.$(function($) {
         processingFee = parseFloat(processingFee) || 0;
         totalFee += (parseFloat(totalFee) * parseFloat(percent) / 100 + processingFee);
       }
-      
-      if(typeof extra_fee_settings !== 'undefined' || (processor_extrafee !== null && typeof processor_extrafee[pp] !== 'undefined')) {
+      if((typeof extra_fee_settings !== 'undefined' && extra_fee_settings.paymentprocessors.includes(pp))|| (processor_extrafee !== null && typeof processor_extrafee[pp] !== 'undefined')) {
         $('#extra_fee_checkbox').show();
       }
     }
