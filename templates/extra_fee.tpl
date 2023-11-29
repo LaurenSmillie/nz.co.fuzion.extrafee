@@ -115,7 +115,10 @@ CRM.$(function($) {
         processingFee = parseFloat(processingFee) || 0;
         totalFee += (parseFloat(totalFee) * parseFloat(percent) / 100 + processingFee);
       }
-      $('#extra_fee_checkbox').show();
+      
+      if(typeof extra_fee_settings !== 'undefined' || (processor_extrafee !== null && typeof processor_extrafee[pp] !== 'undefined')) {
+        $('#extra_fee_checkbox').show();
+      }
     }
     $('#extra_fee_msg').hide();
     
