@@ -98,7 +98,6 @@ CRM.$(function($) {
     }
 
     $('#extra_fee_checkbox').hide();
-    console.log(extra_fee_settings);
 
     var pp = $('input[name=payment_processor_id]:checked').val();
     if (typeof pp === 'undefined' && radioOptions.length==1) {
