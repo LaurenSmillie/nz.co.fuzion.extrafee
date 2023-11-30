@@ -50,7 +50,7 @@ CRM.$(function($) {
     }
   }
 
-  var ppOnLoad = $('input[name=payment_processor_id]:checked').val();
+  var ppOnLoad = $('input[name=payment_processor_id][checked="checked"]').val();
   console.log(ppOnLoad);
 
   if((typeof extra_fee_settings !== 'undefined' && extra_fee_settings.paymentprocessors.includes(ppOnLoad))|| (processor_extrafee !== null && typeof processor_extrafee[ppOnLoad] !== 'undefined')) {
@@ -145,12 +145,10 @@ CRM.$(function($) {
   }
 
   if (!payNowPayment) {
-    console.log(1);
     displayTotalAmount(calculateTotalFee());
   }
 
   $('input[type=radio][name=payment_processor_id]').change(function() {
-    console.log(2);
     displayTotalAmount(calculateTotalFee());
   });
 
