@@ -11,7 +11,7 @@ CRM.$(function($) {
   var separator      = '{/literal}{$config->monetaryDecimalPoint}{literal}';
   var symbol         = '{/literal}{$currencySymbol}{literal}';
   var optional_input = msg = '';
-  var ppOnLoad = 'input[name=payment_processor_id]:checked';
+  var ppOnLoad = $('input[name=payment_processor_id]:checked').val();
 
   {/literal}
     {if $extraFeeOptional}
