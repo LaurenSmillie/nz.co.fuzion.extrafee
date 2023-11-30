@@ -11,8 +11,6 @@ CRM.$(function($) {
   var separator      = '{/literal}{$config->monetaryDecimalPoint}{literal}';
   var symbol         = '{/literal}{$currencySymbol}{literal}';
   var optional_input = msg = '';
-  var ppOnLoad = $('input[name=payment_processor_id]:checked').val();
-  console.log(ppOnLoad);
 
   {/literal}
     {if $extraFeeOptional}
@@ -51,6 +49,9 @@ CRM.$(function($) {
       $('#pricesetTotal').append(optional_input + msg);
     }
   }
+
+  var ppOnLoad = $('input[name=payment_processor_id]:checked').val();
+  console.log(ppOnLoad);
 
   if((typeof extra_fee_settings !== 'undefined' && extra_fee_settings.paymentprocessors.includes(ppOnLoad))|| (processor_extrafee !== null && typeof processor_extrafee[ppOnLoad] !== 'undefined')) {
     $('#extra_fee_checkbox').show();
