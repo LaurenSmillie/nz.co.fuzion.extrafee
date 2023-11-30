@@ -12,6 +12,7 @@ CRM.$(function($) {
   var symbol         = '{/literal}{$currencySymbol}{literal}';
   var optional_input = msg = '';
   var ppOnLoad = $('input[name=payment_processor_id]:checked').val();
+  console.log(ppOnLoad);
 
   {/literal}
     {if $extraFeeOptional}
