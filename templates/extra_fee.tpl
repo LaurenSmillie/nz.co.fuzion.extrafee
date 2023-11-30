@@ -145,10 +145,12 @@ CRM.$(function($) {
   }
 
   if (!payNowPayment) {
+    console.log(1);
     displayTotalAmount(calculateTotalFee());
   }
 
   $('input[type=radio][name=payment_processor_id]').change(function() {
+    console.log(2);
     displayTotalAmount(calculateTotalFee());
   });
 
