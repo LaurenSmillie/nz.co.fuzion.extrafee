@@ -105,7 +105,7 @@ CRM.$(function($) {
     if (typeof pp === 'undefined' && radioOptions.length==1) {
       pp = $('input[name=payment_processor_id]').val();
     }
-    else {
+    else if (typeof pp === 'undefined') {
       pp = $('input[name=payment_processor_id][checked="checked"]').val();
     }
     if (typeof pp !== 'undefined' && pp != 0 && totalFee) {
