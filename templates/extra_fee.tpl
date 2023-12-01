@@ -19,7 +19,7 @@ CRM.$(function($) {
       {/literal}
     {/if}
   {literal}
-  msg = '<div class="content" id="extra_fee_msg">'+ message.replace(/{total_amount}/g, "0") +'</div><br />';
+  msg = '<div class="content" id="extra_fee_msg">'+ message.replace(/{total_amount}/g, "0") +'</div>';
   const radioOptions = $('input[name="payment_processor_id"]');
   
   if (payNowPayment) {
