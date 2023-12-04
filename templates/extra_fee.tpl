@@ -15,11 +15,11 @@ CRM.$(function($) {
   {/literal}
     {if $extraFeeOptional}
       {literal}
-        optional_input = '<div class="content" id="extra_fee_checkbox">{/literal}{$form.extra_fee_add.html} {$form.extra_fee_add.label}{literal}</div><br>';
+        optional_input = '<br><div class="content" id="extra_fee_checkbox">{/literal}{$form.extra_fee_add.html} {$form.extra_fee_add.label}{literal}</div>';
       {/literal}
     {/if}
   {literal}
-  msg = '<div class="content" id="extra_fee_msg">'+ message.replace(/{total_amount}/g, "0") +'</div><br>';
+  msg = '<div class="content" id="extra_fee_msg">'+ message.replace(/{total_amount}/g, "0") +'</div>';
   const radioOptions = $('input[name="payment_processor_id"]');
   
   if (payNowPayment) {
