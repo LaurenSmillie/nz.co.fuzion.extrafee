@@ -15,7 +15,7 @@ CRM.$(function($) {
   {/literal}
     {if $extraFeeOptional}
       {literal}
-        optional_input = '<div class="content" id="extra_fee_checkbox"><br>{/literal}{$form.extra_fee_add.html} {$form.extra_fee_add.label}{literal}</div>';
+        optional_input = '<div class="content" id="extra_fee_checkbox">{/literal}{$form.extra_fee_add.html} {$form.extra_fee_add.label}{literal}</div>';
       {/literal}
     {/if}
   {literal}
